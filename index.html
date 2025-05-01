@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retro Brick Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Home Screen -->
+  <div id="homeScreen">
+    <h1>Retro Brick Game</h1>
+    <button onclick="startGame()">Play</button>
+    <button onclick="alert('High Bounce: ' + localStorage.getItem('highBounce'))">High Bounce</button>
+    <button onclick="alert('Break the bouncing ball with your paddle. Don’t let it fall!')">About Game</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="gameScreen" style="display:none;">
+    <canvas id="gameCanvas" width="480" height="320"></canvas>
+    <div class="controls">
+      <button id="leftBtn">◀️</button>
+      <button id="pauseBtn">⏸️</button>
+      <button id="rightBtn">▶️</button>
+    </div>
+  </div>
+
+  <!-- Pause Menu -->
+  <div id="pauseMenu" style="display:none;">
+    <div class="menuBox">
+      <h2>Paused</h2>
+      <button onclick="resumeGame()">Resume</button>
+      <button onclick="restartGame()">Restart</button>
+      <button onclick="goHome()">Menu</button>
+    </div>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="gameOverScreen" style="display:none;">
+    <div class="menuBox">
+      <h2>Game Over</h2>
+      <p id="finalScoreText">Your number of bounces is: 0</p>
+      <button onclick="restartGame()">Restart</button>
+      <button onclick="goHome()">Menu</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
